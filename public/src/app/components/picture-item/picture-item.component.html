@@ -1,0 +1,17 @@
+<div class='grid' *ngFor="let item of pictures.photos?.photo">
+    <div class="grid_item">
+        <div ng-model="showInfo"><img [src]="item.url_s"></div>
+        <button (click)="showInfo(item.id)" name="showInfo">More Infos</button>
+        <div *ngIf='!isClicked && item.id == itemId'>
+            <div id='show_info'>
+                <p><b>ID:</b> {{item.id}} </p>
+                <p><b>Title:</b> {{item.title}} </p>
+                <p><b>Description:</b> {{item.description._content}} </p>
+                <p><b>License:</b> {{item.license}} </p>
+                <p><b>Date_uploaded:</b> {{item.dateupload}} </p>
+                <p><b>Date_taken:</b> {{item.datetaken}} </p>
+                <p><b>Owner_name:</b> {{item.ownername}} </p>
+            </div>
+        </div>
+    </div>
+</div>
